@@ -11,25 +11,29 @@ const options = {
   borderStyle: 'round'
 };
 
-const primaryChalk = chalk.rgb(172, 20, 90);
-const secondaryChalk = chalk.cyan;
+const scheme = {
+  primary: chalk.rgb(172, 20, 90),
+  secondary: chalk.cyan,
+  light: chalk.white,
+  shade: chalk.gray,
+};
 
 const data = {
-  name: primaryChalk.bold('                  Noviadi Hapsoro'),
-  work: chalk.white('Software Engineer'),
-  twitter: chalk.gray('https://twitter.com/') + secondaryChalk('nobitasama'),
-  npm: chalk.gray('https://npmjs.com/') + secondaryChalk('~noviadi'),
-  github: chalk.gray('https://github.com/') + secondaryChalk('noviadi'),
-  linkedin: chalk.gray('https://linkedin.com/in/') + secondaryChalk('noviadihapsoro'),
-  web: secondaryChalk('https://noviadi.github.io'),
-  npx: chalk.gray('npx ') + secondaryChalk('noviadi'),
-  labelWork: chalk.white.bold('       Work:'),
-  labelTwitter: chalk.white.bold('    Twitter:'),
-  labelnpm: chalk.white.bold('        npm:'),
-  labelGitHub: chalk.white.bold('     GitHub:'),
-  labelLinkedIn: chalk.white.bold('   LinkedIn:'),
-  labelWeb: chalk.white.bold('        Web:'),
-  labelCard: chalk.white.bold('       Card:')
+  name: scheme.primary.bold('                  Noviadi Hapsoro'),
+  work: scheme.light('Software Engineer'),
+  twitter: scheme.shade('https://twitter.com/') + scheme.secondary('nobitasama'),
+  npm: scheme.shade('https://npmjs.com/') + scheme.secondary('~noviadi'),
+  github: scheme.shade('https://github.com/') + scheme.secondary('noviadi'),
+  linkedin: scheme.shade('https://linkedin.com/in/') + scheme.secondary('noviadihapsoro'),
+  web: scheme.secondary('https://noviadi.github.io'),
+  npx: scheme.shade('npx ') + scheme.secondary('noviadi'),
+  labelWork: scheme.light.bold('       Work:'),
+  labelTwitter: scheme.light.bold('    Twitter:'),
+  labelnpm: scheme.light.bold('        npm:'),
+  labelGitHub: scheme.light.bold('     GitHub:'),
+  labelLinkedIn: scheme.light.bold('   LinkedIn:'),
+  labelWeb: scheme.light.bold('        Web:'),
+  labelCard: scheme.light.bold('       Card:')
 };
 
 const newline = '\n'
@@ -43,7 +47,7 @@ const webing = `${data.labelWeb}  ${data.web}`
 const carding = `${data.labelCard}  ${data.npx}`
 
 const output = heading + newline + // data.name
-               working + newline + // data.labelWork + data.work
+               working + newline + // data.work
                newline + newline + // Blank line
                webing + newline + // data.labelWeb + data.web
                linkedining + newline + newline + // data.labelLinkedIn + data.linkedin
@@ -52,5 +56,5 @@ const output = heading + newline + // data.name
                npming + newline + newline + // data.labelnpm + data.npm
                carding // data.labelCard + data.npx
 
-fs.writeFileSync(path.join(__dirname, 'bin/output'), primaryChalk(boxen(output, options)))
+fs.writeFileSync(path.join(__dirname, 'bin/output'), scheme.primary(boxen(output, options)))
 
