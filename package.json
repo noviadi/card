@@ -2,7 +2,10 @@
   "name": "noviadi",
   "version": "1.0.0",
   "description": "Personal card for Noviadi Hapsoro",
-  "main": "index.js",
+  "main": "/bin/card.js",
+  "bin": {
+    "noviadi": "./bin/card.js"
+  },
   "scripts": {
     "prepublish": "npm run build",
     "build": "node build.js",
