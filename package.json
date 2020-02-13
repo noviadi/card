@@ -34,9 +34,6 @@
     "url": "https://github.com/noviadi/card/issues"
   },
   "homepage": "https://noviadi.github.io",
-  "publishConfig": {
-    "registry": "https://npm.registry.github.com/"
-  },
   "devDependencies": {
     "boxen": "^4.2.0",
     "chalk": "^3.0.0",
