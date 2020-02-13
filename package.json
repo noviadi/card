@@ -1,0 +1,46 @@
+{
+  "name": "noviadi",
+  "version": "1.0.0",
+  "description": "Personal card for Noviadi Hapsoro",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "node build.js",
+    "dev": "npm run build && node ./bin/card.js",
+    "lint": "standard",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noviadi/card.git"
+  },
+  "keywords": [
+    "card",
+    "npm",
+    "npm",
+    "card",
+    "npx",
+    "npx",
+    "card",
+    "business",
+    "card"
+  ],
+  "author": "Noviadi Hapsoro <noviadi.mobile@gmail.com> (https://noviadi.github.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/noviadi/card/issues"
+  },
+  "homepage": "https://noviadi.github.io",
+  "publishConfig": {
+    "registry": "https://npm.registry.github.com/"
+  },
+  "devDependencies": {
+    "boxen": "^4.2.0",
+    "chalk": "^3.0.0",
+    "standard": "^14.3.1"
+  },
+  "files": [
+    "bin/card.js",
+    "bin/output"
+  ]
+}
