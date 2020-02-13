@@ -11,15 +11,18 @@ const options = {
   borderStyle: 'round'
 };
 
+const primaryChalk = chalk.rgb(172, 20, 90);
+const secondaryChalk = chalk.cyan;
+
 const data = {
-  name: chalk.greenBright.bold('                  Noviadi Hapsoro'),
+  name: primaryChalk.bold('                  Noviadi Hapsoro'),
   work: chalk.white('Software Engineer'),
-  twitter: chalk.gray('https://twitter.com/') + chalk.cyan('nobitasama'),
-  npm: chalk.gray('https://npmjs.com/') + chalk.cyan('~noviadi'),
-  github: chalk.gray('https://github.com/') + chalk.cyan('noviadi'),
-  linkedin: chalk.gray('https://linkedin.com/in/') + chalk.cyan('noviadihapsoro'),
-  web: chalk.cyan('https://noviadi.github.io'),
-  npx: chalk.greenBright('npx noviadi'),
+  twitter: chalk.gray('https://twitter.com/') + secondaryChalk('nobitasama'),
+  npm: chalk.gray('https://npmjs.com/') + secondaryChalk('~noviadi'),
+  github: chalk.gray('https://github.com/') + secondaryChalk('noviadi'),
+  linkedin: chalk.gray('https://linkedin.com/in/') + secondaryChalk('noviadihapsoro'),
+  web: secondaryChalk('https://noviadi.github.io'),
+  npx: chalk.gray('npx ') + secondaryChalk('noviadi'),
   labelWork: chalk.white.bold('       Work:'),
   labelTwitter: chalk.white.bold('    Twitter:'),
   labelnpm: chalk.white.bold('        npm:'),
@@ -49,5 +52,5 @@ const output = heading + newline + // data.name
                npming + newline + newline + // data.labelnpm + data.npm
                carding // data.labelCard + data.npx
 
-fs.writeFileSync(path.join(__dirname, 'bin/output'), chalk.green(boxen(output, options)))
+fs.writeFileSync(path.join(__dirname, 'bin/output'), primaryChalk(boxen(output, options)))
 
