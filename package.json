@@ -1,6 +1,6 @@
 {
   "name": "noviadi",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Personal card for Noviadi Hapsoro",
   "main": "/bin/card.js",
   "bin": {
